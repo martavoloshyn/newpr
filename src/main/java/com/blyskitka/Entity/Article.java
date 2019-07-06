@@ -120,4 +120,5 @@ public class Article {
     public int hashCode() {
         return Objects.hash(id, name, category, country, volume, tradeMark);
     }
+    //vfd
 }

@@ -120,5 +120,19 @@ public class Article {
     public int hashCode() {
         return Objects.hash(id, name, category, country, volume, tradeMark);
     }
-    //vfd
+
+    @Override
+    public String toString() {
+        return "Article{" +
+                "id=" + id +
+                ", name='" + name + '\'' +
+                ", category='" + category + '\'' +
+                ", price=" + price +
+                ", description='" + description + '\'' +
+                ", country='" + country + '\'' +
+                ", photo='" + photo + '\'' +
+                ", volume=" + volume +
+                ", tradeMark='" + tradeMark + '\'' +
+                '}';
+    }
 }

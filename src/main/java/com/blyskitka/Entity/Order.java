@@ -77,4 +77,15 @@ public class Order {
     public int hashCode() {
         return Objects.hash(idOrder, idUser, date);
     }
+
+    @Override
+    public String toString() {
+        return "Order{" +
+                "idOrder=" + idOrder +
+                ", idUser=" + idUser +
+                ", date=" + date +
+                ", isDelivered=" + isDelivered +
+                ", price=" + price +
+                '}';
+    }
 }

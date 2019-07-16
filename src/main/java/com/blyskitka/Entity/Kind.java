@@ -7,15 +7,15 @@ import java.util.Objects;
 public class Kind {
     Integer id;
     String kind;
-    Category category;
+    Integer idCategory;
 
     public Kind() {
     }
 
-    public Kind(Integer id, String kind, Category category) {
+    public Kind(Integer id, String kind, Integer idCategory) {
         this.id = id;
         this.kind = kind;
-        this.category = category;
+        this.idCategory = idCategory;
     }
 
     public Integer getId() {
@@ -34,12 +34,12 @@ public class Kind {
         this.kind = kind;
     }
 
-    public Category getCategory() {
-        return category;
+    public Integer getIdCategory() {
+        return idCategory;
     }
 
-    public void setCategory(Category category) {
-        this.category = category;
+    public void setIdCategory(Integer idCategory) {
+        this.idCategory = idCategory;
     }
 
     @Override
@@ -49,12 +49,12 @@ public class Kind {
         Kind kind1 = (Kind) o;
         return id.equals(kind1.id) &&
                 kind.equals(kind1.kind) &&
-                category == kind1.category;
+                idCategory == kind1.idCategory;
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, kind, category);
+        return Objects.hash(id, kind, idCategory);
     }
 
     @Override
@@ -62,7 +62,7 @@ public class Kind {
         return "Kind{" +
                 "id=" + id +
                 ", kind='" + kind + '\'' +
-                ", category=" + category +
+                ", idCategory=" + idCategory +
                 '}';
     }
 }

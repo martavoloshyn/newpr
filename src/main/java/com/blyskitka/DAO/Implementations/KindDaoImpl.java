@@ -22,17 +22,17 @@ public class KindDaoImpl implements KindDao {
 
 
     @Override
-    public List<Kind> getKindByCategory(Category category) throws SQLException {
+    public List<Kind> getKindByCategory(Integer idCategory) throws SQLException {
         String query = "SELECT * FROM kinds WHERE category=?";
         PreparedStatement statement = connection.prepareStatement(query);
-        statement.setString(1,category.name());
+        statement.setInt(1,idCategory);
         List<Kind> kinds = new ArrayList<>();
         ResultSet set = statement.executeQuery();
         while(set.next()){
             Kind kind = new Kind();
             kind.setId(set.getInt("id"));
             kind.setKind(set.getString("kind"));
-            kind.setCategory(Category.valueOf(set.getString("category")));
+            kind.setIdCategory(set.getInt("idCategory"));
             kinds.add(kind);
         }
         set.close();
@@ -46,7 +46,7 @@ public class KindDaoImpl implements KindDao {
         PreparedStatement statement = connection.prepareStatement(query);
         statement.setInt(1,obj.getId());
         statement.setString(2,obj.getKind());
-        statement.setString(3,obj.getCategory().name());
+        statement.setInt(3,obj.getIdCategory());
         statement.execute();
         statement.close();
     }
@@ -61,7 +61,7 @@ public class KindDaoImpl implements KindDao {
         if(set.next()){
             kind.setId(set.getInt("id"));
             kind.setKind(set.getString("kind"));
-            kind.setCategory(Category.valueOf(set.getString("category")));
+            kind.setIdCategory(set.getInt("category"));
         }
         set.close();
         statement.close();
@@ -73,7 +73,7 @@ public class KindDaoImpl implements KindDao {
         String query = "UPDATE kinds SET kind=?, category=?  WHERE id=?";
         PreparedStatement statement = connection.prepareStatement(query);
         statement.setString(1,obj.getKind());
-        statement.setString(2,obj.getCategory().name());
+        statement.setInt(2,obj.getIdCategory());
         statement.setInt(3,obj.getId());
         statement.execute();
         statement.close();
@@ -98,7 +98,7 @@ public class KindDaoImpl implements KindDao {
             Kind kind = new Kind();
             kind.setId(set.getInt("id"));
             kind.setKind(set.getString("kind"));
-            kind.setCategory(Category.valueOf(set.getString("category")));
+            kind.setIdCategory(set.getInt("idCategory"));
             kinds.add(kind);
         }
         set.close();

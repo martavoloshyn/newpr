@@ -7,5 +7,5 @@ import java.sql.SQLException;
 import java.util.List;
 
 public interface KindDao extends Dao<Kind> {
-    List<Kind> getKindByCategory(Category category) throws SQLException;
+    List<Kind> getKindByCategory(Integer idCategory) throws SQLException;
 }

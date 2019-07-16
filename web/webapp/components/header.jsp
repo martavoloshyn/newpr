@@ -28,8 +28,8 @@
 
         <div class="text-right">
            <ul>
-               <li><button class="headerMenuButton"><i class="fas fa-shopping-basket fa-2x"></i></button></li>
-               <li><button class="headerMenuButton"><i class="fas fa-door-open fa-2x"></i></button></li>
+               <li><button class="headerMenuButton"><i class="fas fa-shopping-basket"></i></button></li>
+               <li><button class="headerMenuButton"><i class="fas fa-door-open"></i></button></li>
            </ul>
         </div>
     </div>

@@ -20,9 +20,11 @@ li {
     background: none;
     width: 5vw;
     height: 5vw;
+    font-size: 2.5vw;
 }
 
 .headerMenuButton:hover{
     background-color: darkgray;
     border-radius: 10px;
 }
+

@@ -1,0 +1,28 @@
+/*
+.navbar-brand {
+    position: absolute;
+    width: 100%;
+    text-align: center;
+}*/
+
+
+li {
+    list-style-type: none;
+    display: inline;
+}
+
+.companyName{
+    font-size: 4vw;
+}
+
+.headerMenuButton{
+    border: none;
+    background: none;
+    width: 5vw;
+    height: 5vw;
+}
+
+.headerMenuButton:hover{
+    background-color: darkgray;
+    border-radius: 10px;
+}

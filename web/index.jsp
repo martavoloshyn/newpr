@@ -8,9 +8,9 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
   <head>
-    <title>$Title$</title>
+    <title>blyskitka</title>
   </head>
   <body>
-  hey!
+  <jsp:include page="/webapp/components/header.jsp"/>
   </body>
 </html>

@@ -1,6 +1,6 @@
 package com.blyskitka.Service.Implementations;
 
-import Entity.Article;
+import com.blyskitka.Entity.Article;
 import com.blyskitka.DAO.Implementations.ArticleDaoImpl;
 import com.blyskitka.DAO.Interfaces.ArticleDao;
 import com.blyskitka.Service.Interfaces.ArticleService;
@@ -17,8 +17,8 @@ public class ArticleServiceImpl implements ArticleService {
     }
 
     @Override
-    public List<Article> getByCategory(String category) throws SQLException {
-        return articleDao.getByCategory(category);
+    public List<Article> getByKind(Integer idKind) throws SQLException {
+        return articleDao.getByKind(idKind);
     }
 
     @Override

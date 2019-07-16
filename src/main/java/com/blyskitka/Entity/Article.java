@@ -1,31 +1,31 @@
-package Entity;
+package com.blyskitka.Entity;
 
 import java.util.Objects;
 
 public class Article {
     Integer id;
     String name;
-    String category;
     Double price;
     String description;
     String country;
     String photo;
     Double volume;
     String tradeMark;
+    Integer idKind;
 
     public Article() {
     }
 
-    public Article(Integer id, String name, String category, Double price, String description, String country, String photo, Double volume, String tradeMark) {
+    public Article(Integer id, String name, Double price, String description, String country, String photo, Double volume, String tradeMark, Integer idKind) {
         this.id = id;
         this.name = name;
-        this.category = category;
         this.price = price;
         this.description = description;
         this.country = country;
         this.photo = photo;
         this.volume = volume;
         this.tradeMark = tradeMark;
+        this.idKind = idKind;
     }
 
     public Integer getId() {
@@ -42,14 +42,6 @@ public class Article {
 
     public void setName(String name) {
         this.name = name;
-    }
-
-    public String getCategory() {
-        return category;
-    }
-
-    public void setCategory(String category) {
-        this.category = category;
     }
 
     public Double getPrice() {
@@ -100,6 +92,14 @@ public class Article {
         this.tradeMark = tradeMark;
     }
 
+    public Integer getIdKind() {
+        return idKind;
+    }
+
+    public void setIdKind(Integer idKind) {
+        this.idKind = idKind;
+    }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
@@ -107,18 +107,18 @@ public class Article {
         Article article = (Article) o;
         return id.equals(article.id) &&
                 name.equals(article.name) &&
-                category.equals(article.category) &&
                 price.equals(article.price) &&
                 Objects.equals(description, article.description) &&
                 country.equals(article.country) &&
-                Objects.equals(photo, article.photo) &&
+                photo.equals(article.photo) &&
                 Objects.equals(volume, article.volume) &&
-                tradeMark.equals(article.tradeMark);
+                tradeMark.equals(article.tradeMark) &&
+                idKind.equals(article.idKind);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, name, category, country, volume, tradeMark);
+        return Objects.hash(id, name, price, description, country, photo, volume, tradeMark, idKind);
     }
 
     @Override
@@ -126,13 +126,13 @@ public class Article {
         return "Article{" +
                 "id=" + id +
                 ", name='" + name + '\'' +
-                ", category='" + category + '\'' +
                 ", price=" + price +
                 ", description='" + description + '\'' +
                 ", country='" + country + '\'' +
                 ", photo='" + photo + '\'' +
                 ", volume=" + volume +
                 ", tradeMark='" + tradeMark + '\'' +
+                ", idKind='" + idKind + '\'' +
                 '}';
     }
 }

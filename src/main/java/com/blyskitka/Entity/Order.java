@@ -1,32 +1,32 @@
-package Entity;
+package com.blyskitka.Entity;
 
 import java.time.LocalDate;
 import java.util.Objects;
 
 public class Order {
-    Integer idOrder;
+    Integer id;
     Integer idUser;
     LocalDate date;
     Boolean isDelivered;
-    Double price;
+    Double totalPrice;
 
     public Order() {
     }
 
-    public Order(Integer idOrder, Integer idUser, LocalDate date, Boolean isDelivered, Double price) {
-        this.idOrder = idOrder;
+    public Order(Integer id, Integer idUser, LocalDate date, Boolean isDelivered, Double totalPrice) {
+        this.id = id;
         this.idUser = idUser;
         this.date = date;
         this.isDelivered = isDelivered;
-        this.price = price;
+        this.totalPrice = totalPrice;
     }
 
-    public Integer getIdOrder() {
-        return idOrder;
+    public Integer getId() {
+        return id;
     }
 
-    public void setIdOrder(Integer idOrder) {
-        this.idOrder = idOrder;
+    public void setId(Integer idOrder) {
+        this.id = idOrder;
     }
 
     public Integer getIdUser() {
@@ -53,12 +53,12 @@ public class Order {
         isDelivered = delivered;
     }
 
-    public Double getPrice() {
-        return price;
+    public Double getTotalPrice() {
+        return totalPrice;
     }
 
-    public void setPrice(Double price) {
-        this.price = price;
+    public void setTotalPrice(Double totalPrice) {
+        this.totalPrice = totalPrice;
     }
 
     @Override
@@ -66,26 +66,26 @@ public class Order {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         Order order = (Order) o;
-        return idOrder.equals(order.idOrder) &&
+        return id.equals(order.id) &&
                 idUser.equals(order.idUser) &&
                 date.equals(order.date) &&
                 isDelivered.equals(order.isDelivered) &&
-                price.equals(order.price);
+                totalPrice.equals(order.totalPrice);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(idOrder, idUser, date);
+        return Objects.hash(id, idUser, date);
     }
 
     @Override
     public String toString() {
         return "Order{" +
-                "idOrder=" + idOrder +
+                "id=" + id +
                 ", idUser=" + idUser +
                 ", date=" + date +
                 ", isDelivered=" + isDelivered +
-                ", price=" + price +
+                ", totalPrice=" + totalPrice +
                 '}';
     }
 }

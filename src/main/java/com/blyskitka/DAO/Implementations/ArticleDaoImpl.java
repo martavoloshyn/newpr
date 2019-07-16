@@ -1,6 +1,6 @@
 package com.blyskitka.DAO.Implementations;
 
-import Entity.Article;
+import com.blyskitka.Entity.Article;
 import com.blyskitka.DAO.Interfaces.ArticleDao;
 import com.blyskitka.JDBC.DBConnection;
 
@@ -19,23 +19,23 @@ public class ArticleDaoImpl implements ArticleDao {
         connection= DBConnection.getConnection();
     }
 
-    public List<Article> getByCategory(String category) throws SQLException {
-        String query = "SELECT * FROM articles WHERE category = ?;";
+    public List<Article> getByKind(Integer idKind) throws SQLException {
+        String query = "SELECT * FROM articles WHERE idKind = ?;";
         PreparedStatement statement = connection.prepareStatement(query);
-        statement.setString(1,category);
+        statement.setInt(1,idKind);
         List<Article> articles = new ArrayList<Article>() ;
         ResultSet set = statement.executeQuery();
         while(set.next()){
             Article article = new Article();
             article.setId(set.getInt("id"));
             article.setName(set.getString("name"));
-            article.setCategory(set.getString("category"));
             article.setCountry(set.getString("country"));
             article.setDescription(set.getString("description"));
             article.setPhoto(set.getString("photo"));
             article.setPrice(set.getDouble("price"));
             article.setTradeMark(set.getString("tradeMark"));
             article.setVolume(set.getDouble("volume"));
+            article.setIdKind(set.getInt("idKind"));
             articles.add(article);
         }
         set.close();
@@ -53,13 +53,13 @@ public class ArticleDaoImpl implements ArticleDao {
             Article article = new Article();
             article.setId(set.getInt("id"));
             article.setName(set.getString("name"));
-            article.setCategory(set.getString("category"));
             article.setCountry(set.getString("country"));
             article.setDescription(set.getString("description"));
             article.setPhoto(set.getString("photo"));
             article.setPrice(set.getDouble("price"));
             article.setTradeMark(set.getString("tradeMark"));
             article.setVolume(set.getDouble("volume"));
+            article.setIdKind(set.getInt("idKind"));
             articles.add(article);
         }
         set.close();
@@ -78,13 +78,13 @@ public class ArticleDaoImpl implements ArticleDao {
             Article article = new Article();
             article.setId(set.getInt("id"));
             article.setName(set.getString("name"));
-            article.setCategory(set.getString("category"));
             article.setCountry(set.getString("country"));
             article.setDescription(set.getString("description"));
             article.setPhoto(set.getString("photo"));
             article.setPrice(set.getDouble("price"));
             article.setTradeMark(set.getString("tradeMark"));
             article.setVolume(set.getDouble("volume"));
+            article.setIdKind(set.getInt("idKind"));
             articles.add(article);
         }
         set.close();
@@ -93,18 +93,18 @@ public class ArticleDaoImpl implements ArticleDao {
     }
 
     public void insert(Article obj) throws SQLException {
-        String query = "INSERT INTO articles (id, name, category, price, description, country, " +
-                "photo, volume, tradeMark ) VALUES (?,?,?,?,?,?,?,?,?)";
+        String query = "INSERT INTO articles (id, name, price, description, country, " +
+                "photo, volume, tradeMark, idKind ) VALUES (?,?,?,?,?,?,?,?,?)";
         PreparedStatement statement = connection.prepareStatement(query);
         statement.setInt(1,obj.getId());
         statement.setString(2,obj.getName());
-        statement.setString(3,obj.getCategory());
-        statement.setDouble(4,obj.getPrice());
-        statement.setString(5,obj.getDescription());
-        statement.setString(6,obj.getCountry());
-        statement.setString(7,obj.getPhoto());
-        statement.setDouble(8,obj.getVolume());
-        statement.setString(9,obj.getTradeMark());
+        statement.setDouble(3,obj.getPrice());
+        statement.setString(4,obj.getDescription());
+        statement.setString(5,obj.getCountry());
+        statement.setString(6,obj.getPhoto());
+        statement.setDouble(7,obj.getVolume());
+        statement.setString(8,obj.getTradeMark());
+        statement.setInt(9,obj.getIdKind());
         statement.execute();
         statement.close();
     }
@@ -118,13 +118,13 @@ public class ArticleDaoImpl implements ArticleDao {
         if(set.next()){
             article.setId(set.getInt("id"));
             article.setName(set.getString("name"));
-            article.setCategory(set.getString("category"));
             article.setCountry(set.getString("country"));
             article.setDescription(set.getString("description"));
             article.setPhoto(set.getString("photo"));
             article.setPrice(set.getDouble("price"));
             article.setTradeMark(set.getString("tradeMark"));
             article.setVolume(set.getDouble("volume"));
+            article.setIdKind(set.getInt("idKind"));
         }
         set.close();
         statement.close();
@@ -132,18 +132,18 @@ public class ArticleDaoImpl implements ArticleDao {
     }
 
     public void update(Article obj) throws SQLException {
-        String query = "UPDATE articles SET name=?, category=?, price=?, description=?, " +
-                "country=?, photo=?, volume=?, tradeMark=?   WHERE id=?";
+        String query = "UPDATE articles SET name=?, price=?, description=?, " +
+                "country=?, photo=?, volume=?, tradeMark=? , idKind=?  WHERE id=?";
         PreparedStatement statement = connection.prepareStatement(query);
         statement.setString(1,obj.getName());
-        statement.setString(2,obj.getCategory());
-        statement.setDouble(3,obj.getPrice());
-        statement.setString(4,obj.getDescription());
-        statement.setString(5,obj.getCountry());
-        statement.setString(6,obj.getPhoto());
-        statement.setDouble(7,obj.getVolume());
-        statement.setString(8,obj.getTradeMark());
-        statement.setInt(9,obj.getId());
+        statement.setDouble(2,obj.getPrice());
+        statement.setString(3,obj.getDescription());
+        statement.setString(4,obj.getCountry());
+        statement.setString(5,obj.getPhoto());
+        statement.setDouble(6,obj.getVolume());
+        statement.setString(7,obj.getTradeMark());
+        statement.setInt(8,obj.getId());
+        statement.setInt(9,obj.getIdKind());
         statement.execute();
         statement.close();
     }
@@ -165,13 +165,13 @@ public class ArticleDaoImpl implements ArticleDao {
             Article article = new Article();
             article.setId(set.getInt("id"));
             article.setName(set.getString("name"));
-            article.setCategory(set.getString("category"));
             article.setCountry(set.getString("country"));
             article.setDescription(set.getString("description"));
             article.setPhoto(set.getString("photo"));
             article.setPrice(set.getDouble("price"));
             article.setTradeMark(set.getString("tradeMark"));
             article.setVolume(set.getDouble("volume"));
+            article.setIdKind(set.getInt("idKind"));
             articles.add(article);
         }
         set.close();

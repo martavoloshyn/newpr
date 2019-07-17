@@ -1,0 +1,8 @@
+.categories{
+    text-transform: uppercase;
+}
+
+.categories:hover{
+    background-color: darkgray;
+    cursor: pointer;
+}

@@ -1,7 +1,6 @@
 package com.blyskitka.DAO.Interfaces;
 
 import com.blyskitka.Entity.Kind;
-import com.blyskitka.Enums.Category;
 
 import java.sql.SQLException;
 import java.util.List;

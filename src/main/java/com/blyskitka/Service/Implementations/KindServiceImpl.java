@@ -3,7 +3,6 @@ package com.blyskitka.Service.Implementations;
 import com.blyskitka.DAO.Implementations.KindDaoImpl;
 import com.blyskitka.DAO.Interfaces.KindDao;
 import com.blyskitka.Entity.Kind;
-import com.blyskitka.Enums.Category;
 import com.blyskitka.Service.Interfaces.KindService;
 
 import java.sql.SQLException;
@@ -18,12 +17,14 @@ public class KindServiceImpl implements KindService {
     }
 
     @Override
-    public List<Kind> getByCategory(Category category) throws SQLException {
-        return kindDao.getKindByCategory(category);
+    public List<Kind> getByCategory(Integer categoryId) throws SQLException {
+
+        return kindDao.getKindByCategory(categoryId);
     }
 
     @Override
     public void insert(Kind obj) throws SQLException {
+
         kindDao.insert(obj);
     }
 

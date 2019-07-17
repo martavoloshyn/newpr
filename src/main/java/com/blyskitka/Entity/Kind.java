@@ -1,13 +1,16 @@
 package com.blyskitka.Entity;
 
-import com.blyskitka.Enums.Category;
 
 import java.util.Objects;
 
 public class Kind {
-    Integer id;
-    String kind;
-    Integer idCategory;
+
+    private Integer id;
+
+    private String kind;
+
+    private Integer idCategory;
+
 
     public Kind() {
     }
@@ -59,8 +62,8 @@ public class Kind {
 
     @Override
     public String toString() {
-        return "Kind{" +
-                "id=" + id +
+        return "Kind{"
+                + "id=" + id +
                 ", kind='" + kind + '\'' +
                 ", idCategory=" + idCategory +
                 '}';

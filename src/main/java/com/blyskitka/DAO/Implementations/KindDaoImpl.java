@@ -2,7 +2,6 @@ package com.blyskitka.DAO.Implementations;
 
 import com.blyskitka.DAO.Interfaces.KindDao;
 import com.blyskitka.Entity.Kind;
-import com.blyskitka.Enums.Category;
 import com.blyskitka.JDBC.DBConnection;
 
 import java.sql.Connection;
@@ -89,7 +88,7 @@ public class KindDaoImpl implements KindDao {
     }
 
     @Override
-    public List getAll() throws SQLException {
+    public List<Kind> getAll() throws SQLException {
         String query = "SELECT * FROM kinds";
         PreparedStatement statement = connection.prepareStatement(query);
         List<Kind> kinds = new ArrayList<>();

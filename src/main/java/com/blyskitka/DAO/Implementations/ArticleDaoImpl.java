@@ -44,7 +44,8 @@ public class ArticleDaoImpl implements ArticleDao {
     }
 
     public List<Article> getByName(String name) throws SQLException {
-        String query = "SELECT * FROM articles WHERE CHARINDEX(?,name)>0;";
+        String query =
+                "SELECT * FROM articles WHERE name LIKE CONCAT('%',?,'%')  ;";
         PreparedStatement statement = connection.prepareStatement(query);
         statement.setString(1,name);
         List<Article> articles = new ArrayList<Article>() ;

@@ -31,7 +31,6 @@ public class SearchServlet extends HttpServlet {
         ArticleService articleService = new ArticleServiceImpl();
         try {
             List<Article> searchedArticles = articleService.getByName(searchName);
-            req.setAttribute("requiredArticles",searchedArticles);
             String json = new Gson().toJson(searchedArticles);
 
             resp.setContentType("application/json");

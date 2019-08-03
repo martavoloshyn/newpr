@@ -19,7 +19,7 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="https://kit.fontawesome.com/b9192cac7d.js"></script>
     <script src="${pageContext.request.contextPath}/webapp/js/search1.js"></script>
-    <link href="${pageContext.request.contextPath}/webapp/css/index1.css" rel="stylesheet">
+    <link href="${pageContext.request.contextPath}/webapp/css/index2.css" rel="stylesheet">
 </head>
 <body>
 <jsp:include page="/webapp/components/header.jsp"/>
@@ -38,12 +38,16 @@
             </table>
         </div>
         <div class="col-md-8">
-            <form action="">
-                <input id="searchInput" type="text" onkeypress="handleEnter(event)">
-                <i class="fa fa-search" id="searchButton" onclick="searchArticles()"></i>
-            </form>
-            <div id="searchResult">
+            <div class="container">
+                <div class="row">
+                    <form>
+                        <input id="searchInput" type="text" onkeypress="handleEnter(event)">
+                        <i class="fa fa-search" id="searchButton" onclick="searchArticles()"></i>
+                    </form>
+                </div>
+                <div id="searchResult">
 
+                </div>
             </div>
         </div>
     </div>

@@ -19,7 +19,7 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="https://kit.fontawesome.com/b9192cac7d.js"></script>
     <script src="${pageContext.request.contextPath}/webapp/js/search1.js"></script>
-    <link href="${pageContext.request.contextPath}/webapp/css/index2.css" rel="stylesheet">
+    <link href="${pageContext.request.contextPath}/webapp/css/index3.css" rel="stylesheet">
 </head>
 <body>
 <jsp:include page="/webapp/components/header.jsp"/>
@@ -30,12 +30,15 @@
                 <thead>
                 <c:forEach items="${categoryList}" var="category" varStatus="status">
                     <tr>
-                        <th class="categories" scope="col">${category.category} <i class="fas fa-chevron-right"></i>
+                        <th class="categories" scope="col" onclick="showKinds(${category.id})">${category.category}<i class="fas fa-chevron-right"></i>
                         </th>
                     </tr>
                 </c:forEach>
                 </thead>
             </table>
+            <div id="selectedKinds">
+
+            </div>
         </div>
         <div class="col-md-8">
             <div class="container">

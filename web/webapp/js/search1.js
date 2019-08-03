@@ -33,3 +33,13 @@ $(document).ready(function() {
     });
 });
 
+function showKinds(categoryId) {
+    document.getElementById("selectedKinds").innerHTML = '';
+    $.get("http://localhost:9090/newpr_war_exploded/kinds?categoryId=" + categoryId.toString(), function (responseJson) {
+        var $list = $("<div class=\"list-group\">").appendTo("#selectedKinds");
+        $.each(responseJson, function (index, kind) {
+            $("<p class=\"list-group-item\">").appendTo($list)
+                .append($("<span>").text(kind.kind))
+        });
+    });
+}

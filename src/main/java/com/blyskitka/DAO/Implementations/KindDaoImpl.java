@@ -22,7 +22,7 @@ public class KindDaoImpl implements KindDao {
 
     @Override
     public List<Kind> getKindByCategory(Integer idCategory) throws SQLException {
-        String query = "SELECT * FROM kinds WHERE category=?";
+        String query = "SELECT * FROM kinds WHERE idCategory=?";
         PreparedStatement statement = connection.prepareStatement(query);
         statement.setInt(1,idCategory);
         List<Kind> kinds = new ArrayList<>();

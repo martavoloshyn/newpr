@@ -33,5 +33,12 @@
         <servlet-name>getKindsServlet</servlet-name>
         <url-pattern>/kinds</url-pattern>
     </servlet-mapping>
-
+    <servlet>
+        <servlet-name>getArticlesByKindServlet</servlet-name>
+        <servlet-class>com.blyskitka.Controller.GetArticlesByKindServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>getArticlesByKindServlet</servlet-name>
+        <url-pattern>/articlesByKind</url-pattern>
+    </servlet-mapping>
 </web-app>

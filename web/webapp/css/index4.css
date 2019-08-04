@@ -75,11 +75,25 @@ form:hover .fa{
     color: white;
 }
 
+.article-image{
+    width: 15vw;
+}
+
 .box-part{
-    background:lightgray;
+    background:white;
     border-radius:0;
     padding:60px 10px;
     margin:30px 0px;
+}
+
+.box-part:hover{
+    border-style: double;
+    cursor: pointer;
+    border-color: darkgray;
+}
+
+.box-part:active {
+    border-color: black;
 }
 
 .list-group-item{

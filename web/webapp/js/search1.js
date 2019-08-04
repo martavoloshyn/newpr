@@ -1,13 +1,12 @@
 
 function sendRequest(link){
     $.get(link, function (responseJson) {
-        //var $div1 = $("<div class=\"col-lg-4 col-md-4 col-sm-4 col-xs-12\">").appendTo($("#searchResult"));
         var $container = $("<div class=\"container-fluid\">").appendTo("#searchResult")
         var $row = $("<div class=\"row\">").appendTo($container)
         $.each(responseJson, function (index, product) {
             var $div1 = $("<div class=\"col-lg-4 col-md-4 col-sm-4 col-xs-12\">").appendTo($row)
             var $div2 = $("<div class=\"box-part text-center\">").appendTo($div1)
-                .append($("<i class=\"fab fa-font-awesome-flag\"></i>").text(""))
+                .prepend($("<img>",{class:"article-image",src:product.photo}))
 
             $("<div class=\"title\">").appendTo($div2)
                 .append($("<h4>").text(product.name))

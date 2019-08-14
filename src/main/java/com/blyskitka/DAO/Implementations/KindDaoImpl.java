@@ -60,7 +60,7 @@ public class KindDaoImpl implements KindDao {
         if(set.next()){
             kind.setId(set.getInt("id"));
             kind.setKind(set.getString("kind"));
-            kind.setIdCategory(set.getInt("category"));
+            kind.setIdCategory(set.getInt("idCategory"));
         }
         set.close();
         statement.close();

@@ -107,3 +107,12 @@ form:hover .fa{
     color: black;
     border-color: black;
 }
+
+.article-name{
+    font-size: 3vh;
+    color: darkgray;
+}
+
+.article-name:hover{
+    color: black;
+}

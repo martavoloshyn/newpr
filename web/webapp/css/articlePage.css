@@ -1,0 +1,22 @@
+.article-name{
+    text-transform: uppercase;
+}
+
+.characteristics{
+    font-weight: bold;
+}
+
+.article-image{
+    width: 100%;
+}
+
+.btn-outline-dark{
+    width: 50%;
+    height: 5%;
+}
+
+.right-col{
+    padding-top: 30%;
+    padding-left: 25%;
+    align-content: center;
+}

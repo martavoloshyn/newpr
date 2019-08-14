@@ -9,7 +9,7 @@ function sendRequest(link){
                 .prepend($("<img>",{class:"article-image",src:product.photo}))
 
             $("<div class=\"title\">").appendTo($div2)
-                .append($("<h4>").text(product.name))
+                .prepend($("<a>",{class:"article-name",href:"http://localhost:9090/newpr_war_exploded/articlePage?idArticle="+product.id.toString()}).text(product.name))
             $("<div class=\"text\">").appendTo($div2)
                 .append($("<span>").text(product.description))
             $("<div class=\"price\">").appendTo($div2)

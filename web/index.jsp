@@ -19,7 +19,7 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="https://kit.fontawesome.com/b9192cac7d.js"></script>
     <script src="${pageContext.request.contextPath}/webapp/js/search1.js"></script>
-    <link href="${pageContext.request.contextPath}/webapp/css/index4.css" rel="stylesheet">
+    <link href="${pageContext.request.contextPath}/webapp/css/index6.css" rel="stylesheet">
 </head>
 <body>
 <jsp:include page="/webapp/components/header.jsp"/>
